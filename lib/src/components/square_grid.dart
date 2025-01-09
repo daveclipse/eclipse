@@ -15,7 +15,7 @@ class _DraggableGridState extends State<DraggableGrid> {
   @override
   void initState() {
     super.initState();
-    squares = widget.squares; // Initialize with the provided squares
+    squares = widget.squares;
   }
 
   void onReorder(int oldIndex, int newIndex) {
@@ -72,7 +72,7 @@ class _DraggableGridState extends State<DraggableGrid> {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: GridView.builder(
-        shrinkWrap: true, // Ensures it doesn't take infinite height
+        shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -87,15 +87,15 @@ class _DraggableGridState extends State<DraggableGrid> {
             child: LongPressDraggable<Map<String, dynamic>>(
               data: square,
               feedback: Material(
-                color: Colors.transparent, // Ensures consistent appearance
+                color: Colors.transparent,
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width / 3 - 24, // Matches grid size
+                  width: MediaQuery.of(context).size.width / 3 - 24,
                   height: MediaQuery.of(context).size.width / 3 - 24,
                   child: _buildSquare(square, Colors.white),
                 ),
               ),
               childWhenDragging: Opacity(
-                opacity: 0.5, // Makes original slightly transparent while dragging
+                opacity: 0.5,
                 child: _buildSquare(square, Colors.white),
               ),
               child: DragTarget<Map<String, dynamic>>(

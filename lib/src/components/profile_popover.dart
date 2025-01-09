@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProfilePopover extends StatefulWidget {
   final bool isVisible;
   final VoidCallback onClose;
-  final Function(Map<String, Object>) onAddTile; // Callback to notify parent
+  final Function(Map<String, Object>) onAddTile;
 
   const ProfilePopover({
     required this.isVisible,

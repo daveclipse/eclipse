@@ -21,19 +21,17 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
 
-  // Pages for the app
   late final List<Widget> _pages;
 
   @override
   void initState() {
     super.initState();
     _pages = [
-      Login(navigateToPage: _navigateToPage), // Pass the navigation callback
+      Login(navigateToPage: _navigateToPage),
       const Profile(userId: '1'),
     ];
   }
 
-  // Callback to navigate between pages
   void _navigateToPage(int index) {
     setState(() {
       _selectedIndex = index;
@@ -54,7 +52,7 @@ class _MyAppState extends State<MyApp> {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [
-            Locale('en', ''), // English, no country code
+            Locale('en', ''),
           ],
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
@@ -64,9 +62,9 @@ class _MyAppState extends State<MyApp> {
           home: Scaffold(
             body: _pages[_selectedIndex],
             bottomNavigationBar: _selectedIndex == 0
-                ? null // Hide BottomNavigationBar on Login page
+                ? null
                 : BottomNavigationBar(
-                    currentIndex: _selectedIndex - 1, // Adjust index for pages
+                    currentIndex: _selectedIndex - 1,
                     onTap: (index) => _navigateToPage(index),
                     backgroundColor: Colors.white,
                     items: const [

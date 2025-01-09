@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
-  final Function(int) navigateToPage; // Callback to update selected index
+  final Function(int) navigateToPage;
 
   const Login({required this.navigateToPage, super.key});
 
@@ -15,12 +15,12 @@ class _LoginState extends State<Login> {
 
   void _handleSignIn() {
     print('Sign In button pressed');
-    widget.navigateToPage(1); // Navigate to Profile page
+    widget.navigateToPage(1);
   }
 
   void _handleRegister() {
     print('Register button pressed');
-    widget.navigateToPage(1); // Navigate to Profile page
+    widget.navigateToPage(1);
   }
 
   @override
@@ -42,7 +42,6 @@ class _LoginState extends State<Login> {
               ),
               const SizedBox(height: 20),
 
-              // Email Input
               SizedBox(
                 width: screenWidth * 0.9,
                 child: TextField(
@@ -58,7 +57,6 @@ class _LoginState extends State<Login> {
               ),
               const SizedBox(height: 16),
 
-              // Password Input
               SizedBox(
                 width: screenWidth * 0.9,
                 child: TextField(
@@ -75,7 +73,6 @@ class _LoginState extends State<Login> {
               ),
               const SizedBox(height: 16),
 
-              // Sign In Button
               SizedBox(
                 width: screenWidth * 0.9,
                 child: ElevatedButton(
@@ -93,9 +90,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10), // Adds fixed vertical space
+              const SizedBox(height: 10),
 
-              // Register Button
               SizedBox(
                 width: screenWidth * 0.9,
                 child: ElevatedButton(

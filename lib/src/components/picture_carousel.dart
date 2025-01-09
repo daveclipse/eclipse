@@ -28,7 +28,7 @@ class _PictureCarouselState extends State<PictureCarousel> {
     return Column(
       children: [
         CarouselSlider.builder(
-          itemCount: widget.imagePaths.length + 1, // Add 1 for the plus sign
+          itemCount: widget.imagePaths.length + 1,
           itemBuilder: (context, index, realIndex) {
             if (index < widget.imagePaths.length) {
               // Normal image items
@@ -40,7 +40,7 @@ class _PictureCarouselState extends State<PictureCarousel> {
                   color: Colors.grey[200],
                   child: Image.asset(
                     widget.imagePaths[index],
-                    fit: BoxFit.cover, // Ensures the image is object-fitted
+                    fit: BoxFit.cover,
                   ),
                 ),
               );
@@ -71,7 +71,7 @@ class _PictureCarouselState extends State<PictureCarousel> {
             height: containerSize,
             aspectRatio: 1.0,
             enlargeCenterPage: true,
-            enableInfiniteScroll: false, // Prevent wrapping
+            enableInfiniteScroll: false,
             onPageChanged: (index, reason) {
               setState(() {
                 _currentImageIndex = index;
@@ -83,7 +83,7 @@ class _PictureCarouselState extends State<PictureCarousel> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(
-            widget.imagePaths.length + 1, // Add 1 for the plus sign
+            widget.imagePaths.length + 1,
             (index) {
               return GestureDetector(
                 onTap: () => widget.carouselController.animateToPage(index),

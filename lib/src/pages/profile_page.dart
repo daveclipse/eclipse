@@ -93,8 +93,8 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final gridBoxWidth = (screenWidth - 48) / 3; // Total padding and spacing is 48 (16 * 2 + 8 * 2)
-    final vitalsCardHeight = gridBoxWidth + 8; // Match grid row height including spacing
+    final gridBoxWidth = (screenWidth - 48) / 3;
+    final vitalsCardHeight = gridBoxWidth + 8;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF3F4F6),
