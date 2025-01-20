@@ -1,3 +1,4 @@
+import 'package:eclipse_flutter/src/pages/location_page.dart';
 import 'package:eclipse_flutter/src/pages/login_page.dart';
 import 'package:eclipse_flutter/src/pages/profile_page.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class _MyAppState extends State<MyApp> {
     _pages = [
       Login(navigateToPage: _navigateToPage),
       const Profile(userId: '1'),
+      LocationPage(),
     ];
   }
 
@@ -75,6 +77,10 @@ class _MyAppState extends State<MyApp> {
                       BottomNavigationBarItem(
                         icon: Icon(Icons.person),
                         label: 'Profile',
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.location_on),
+                        label: 'Location',
                       ),
                     ],
                   ),
